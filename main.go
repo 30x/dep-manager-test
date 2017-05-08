@@ -4,6 +4,8 @@ import (
 	"context"
 	"fmt"
 
+	"io/ioutil"
+
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/deploymentmanager/v2"
 )
@@ -24,14 +26,27 @@ func main() {
 		fmt.Printf("Error: %v\n", err)
 	}
 
-	tempDep := deploymentmanager.Deployment{
-		Name: "test",
+	//Get a yaml file
+	tempYaml, err := ioutil.ReadFile("temp.yaml")
+	if err != nil {
+		fmt.Printf("Error: %v\n", err)
 	}
-	_ = tempDep
+	//DEBUG
+	fmt.Println(string(tempYaml))
 
-	resp, err := deploymentManagerClient.Deployments.Insert(project, &deploymentmanager.Deployment{
-	//Fill in
-	}).Context(ctx).Do()
+	tempDep := deploymentmanager.Deployment{
+		Name: "test4",
+		Target: &deploymentmanager.TargetConfiguration{
+			Config: &deploymentmanager.ConfigFile{
+				Content: string(tempYaml),
+			},
+		},
+	}
+
+	resp, err := deploymentManagerClient.Deployments.Insert(project, &tempDep).Context(ctx).Do()
+	if err != nil {
+		fmt.Printf("Error: %v\n", err)
+	}
 	_ = resp
 
 }
