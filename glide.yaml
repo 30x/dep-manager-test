@@ -1,0 +1,8 @@
+package: github.com/30x/dep-manager-test
+import:
+- package: golang.org/x/oauth2
+  subpackages:
+  - google
+- package: google.golang.org/api
+  subpackages:
+  - deploymentmanager/v2
