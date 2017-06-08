@@ -1,6 +1,10 @@
 dep-manager-test
+gotest1.yaml
+temp4.yaml
 temp3.yaml
 temp2.yaml
 temp1.yaml
 temp.yaml
 vm.yaml
+vendor
+.vscode

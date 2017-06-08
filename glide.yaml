@@ -6,3 +6,5 @@ import:
 - package: google.golang.org/api
   subpackages:
   - deploymentmanager/v2
+- package: github.com/ghodss/yaml
+  version: ^1.0.0

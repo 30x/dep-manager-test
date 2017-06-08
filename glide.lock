@@ -1,11 +1,13 @@
-hash: 29129e37b474116bc4dc057b50f07dd4d0bbf84165be36b3dac18ac1ed86795f
-updated: 2017-05-08T08:27:21.541306613-06:00
+hash: 86cd6abbf8f9f09832eaa49cbcd59e427bc81514a35c3a3069514a0260a0c88f
+updated: 2017-06-07T14:16:43.661652849-06:00
 imports:
 - name: cloud.google.com/go
   version: c116c7972ec94f148459a304d07a67ecbc770d4b
   subpackages:
   - compute/metadata
   - internal
+- name: github.com/ghodss/yaml
+  version: 0ca9ea5df5451ffdf184b4428c902747c2c11cd7
 - name: github.com/golang/protobuf
   version: 8616e8ee5e20a1704615e6c8d7afcdac06087a67
   subpackages:
@@ -33,6 +35,9 @@ imports:
   version: dfa61ae24628a06502b9c2805d983b57e89399b5
   subpackages:
   - deploymentmanager/v2
+  - gensupport
+  - googleapi
+  - googleapi/internal/uritemplates
 - name: google.golang.org/appengine
   version: 4f7eeb5305a4ba1966344836ba4af9996b7b4e05
   subpackages:
@@ -59,4 +64,6 @@ imports:
   - stats
   - tap
   - transport
+- name: gopkg.in/yaml.v2
+  version: a3f3340b5840cee44f372bddb5880fcbc419b46a
 testImports: []
